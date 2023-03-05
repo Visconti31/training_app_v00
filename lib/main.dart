@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:training_app/responsive/mobile_screen_layout.dart';
 import 'package:training_app/responsive/responsive_layout_screen.dart';
 import 'package:training_app/responsive/web_screen_layout.dart';
+import 'package:training_app/screens/login_screen.dart';
+import 'package:training_app/screens/signup_screen.dart';
 import 'package:training_app/utils/colors.dart';
 
 void main() async {
@@ -36,10 +38,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: mobileBackgroundColor,
       ),
-      home: ResponsiveLayout(
-        mobileScreenLayout: const MobileScreenLayout(),
-        webScreenLayout: const WebScreenLayout(),
-      ),
+      // home: const ResponsiveLayout(
+      //   mobileScreenLayout: MobileScreenLayout(),
+      //   webScreenLayout: WebScreenLayout(),
+      // ),
+      home: const SignupScreen(),
     );
   }
 }
