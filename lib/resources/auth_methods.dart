@@ -15,7 +15,7 @@ class AuthMethods {
     required String password,
     required String username,
     required String bio,
-    // required Uint8List file,
+    required Uint8List file,
   }) async {
     String res = "Some error occurred";
 
@@ -23,7 +23,8 @@ class AuthMethods {
       if (email.isNotEmpty ||
           password.isNotEmpty ||
           username.isNotEmpty ||
-          bio.isNotEmpty) {
+          bio.isNotEmpty ||
+          file != null) {
         // Register user
         UserCredential userCredential = await _auth
             .createUserWithEmailAndPassword(email: email, password: password);
@@ -39,6 +40,7 @@ class AuthMethods {
           'following': [],
         });
         res = 'Success';
+        // TODO: Store the immage
       }
     } catch (err) {
       res = err.toString();
